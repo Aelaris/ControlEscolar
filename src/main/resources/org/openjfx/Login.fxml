@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.LoginController">
+    <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;">
+         <children>
+            <Pane layoutX="164.0" layoutY="2.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" translateX="100.0">
+               <children>
+                  <Button graphicTextGap="15.0" layoutX="367.0" layoutY="550.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="40.0" prefWidth="282.0" style="-fx-background-radius: 0 0 30 30;" stylesheets="@../../css/botonLogin.css" text="Login">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow blurType="GAUSSIAN" height="73.11" offsetY="10.0" radius="17.7775" width="0.0">
+                           <color>
+                              <Color opacity="0.16489361226558685" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Pane layoutX="308.0" layoutY="250.0" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: f2f2f2; -fx-background-radius: 40 40 40 40;">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <children>
+                        <TextField fx:id="txt_key" layoutX="95.0" layoutY="102.0" prefHeight="35.0" prefWidth="246.0" promptText="CLAVE" style="-fx-background-radius: 0 0 0 0; -fx-background-color: ffffff;" stylesheets="@../../css/txtInput.css" />
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="60.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/icons8-key-90.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="60.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/icons8-password-90.png" />
+                           </image>
+                        </ImageView>
+                        <PasswordField fx:id="txt_password" layoutX="95.0" layoutY="150.0" prefHeight="35.0" prefWidth="246.0" promptText="CONTRASEÑA" style="-fx-background-radius: 0 0 0 0; -fx-background-color: ffffff;" stylesheets="@../../css/txtInput.css" />
+                        <ImageView fitHeight="100.0" fitWidth="95.0" layoutX="153.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0" />
+                           </effect>
+                           <image>
+                              <Image url="@../../imagenes/icons8-person.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="264.0" spacing="40.0" style="-fx-background-color: f2f2f2;">
+               <children>
+                  <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="207.0" stylesheets="@../../css/boton.css" text="Home" translateY="-5.0">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.5197568535804749" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/home_page_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Alumno">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="img_alumno11" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/student_male_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Maestro" translateY="-20.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/tuition_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Materias" translateY="-40.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/Books_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Registrados" translateY="-60.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/table_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_exit" graphicTextGap="15.0" mnemonicParsing="false" onAction="#openPopup" prefHeight="42.0" prefWidth="158.0" stylesheets="@../../css/botonSalir.css" text="Salir" translateY="30.0">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.5197568535804749" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/logout_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="200.0" />
+               </padding>
+            </VBox>
+            <Pane mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="102.0" prefWidth="1280.0" style="-fx-background-color: c2c2c2;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="130.0" fitWidth="150.0" layoutX="71.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/Myproject.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="537.0" layoutY="15.0" text="Control Escolar Login" textFill="WHITE">
+                     <font>
+                        <Font size="50.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+    </children>
+</StackPane>

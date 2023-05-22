@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.HomeController">
+    <children>
+        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" stylesheets="@../../css/botonesMain.css">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="264.0" spacing="40.0" style="-fx-background-color: f2f2f2;">
+                    <children>
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="207.0" stylesheets="@../../css/boton.css" text="Home" translateY="-5.0">
+                            <effect>
+                                <DropShadow>
+                                    <color>
+                                        <Color opacity="0.5197568535804749" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../imagenes/home_page_480px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Alumno">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../imagenes/student_male_480px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Maestro" translateY="-20.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../imagenes/tuition_480px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnSubjects" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Materias" translateY="-40.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../imagenes/Books_480px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Registrados" translateY="-60.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../imagenes/table_480px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#openPopup" prefHeight="42.0" prefWidth="158.0" stylesheets="@../../css/botonSalir.css" text="Salir" translateY="30.0">
+                            <effect>
+                                <DropShadow>
+                                    <color>
+                                        <Color opacity="0.5197568535804749" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../imagenes/logout_480px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="200.0" />
+                    </padding>
+                </VBox>
+                <Pane mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="102.0" prefWidth="1280.0" style="-fx-background-color: c2c2c2;">
+                    <effect>
+                        <DropShadow blurType="GAUSSIAN" />
+                    </effect>
+                    <children>
+                        <ImageView fitHeight="130.0" fitWidth="150.0" layoutX="71.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../imagenes/Myproject.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="709.0" layoutY="15.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="50.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            <Button graphicTextGap="15.0" layoutX="431.0" layoutY="239.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Alumnos">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.5197568535804749" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button graphicTextGap="15.0" layoutX="611.0" layoutY="239.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Maestros">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.5197568535804749" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button graphicTextGap="15.0" layoutX="791.0" layoutY="239.0" mnemonicParsing="false" onAction="#btnSubjects" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Materias">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.5197568535804749" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button graphicTextGap="15.0" layoutX="971.0" layoutY="239.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Registrados">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.5197568535804749" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            </children>
+        </Pane>
+    </children>
+</StackPane>
