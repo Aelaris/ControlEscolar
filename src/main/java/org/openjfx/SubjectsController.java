@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.Subject;
 import repository.SubjectsRepository;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -27,7 +26,7 @@ public class SubjectsController {
     private SubjectsRepository subjectsRepository = new SubjectsRepository();
     private Subject subject;
 
-    private void createSubject() throws ClaveSubject, SemesterSubject, CreditsSubject {
+    private void createSubject() throws IOException {
 
         try {
             String clave = txt_clave.getText();
@@ -38,15 +37,27 @@ public class SubjectsController {
             subject = new Subject(clave, name, semester, credits);
 
             subjectsRepository.createSubject(subject);
-        }catch (ClaveSubject claveSubject){
-            System.out.println("La clave de la materia no cumple con el formato requerido.");
+
+        }catch (ClaveSubject | SemesterSubject | CreditsSubject e) {
+
+            double coordinateX = 650;
+            double coordinateY = 300;
+
+            Stage popupStage = new Stage();
+            Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorSubject.fxml")));
+            popupStage.setScene(new Scene(popupRoot));
+            popupStage.initStyle(StageStyle.UNDECORATED);
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.show();
+
+            popupStage.centerOnScreen();
+            popupStage.setX(coordinateX);
+            popupStage.setY(coordinateY);
         }
-
-
     }
 
     @FXML
-    private void btnCreateSubject() throws ClaveSubject, SemesterSubject, CreditsSubject {
+    private void btnCreateSubject() throws IOException {
 
         createSubject();
 
@@ -88,6 +99,20 @@ public class SubjectsController {
     private void btnHome() throws IOException {
 
         App.setRoot("Home");
+
+    }
+
+    @FXML
+    private void btnTeachers() throws IOException {
+
+        App.setRoot("Teachers");
+
+    }
+
+    @FXML
+    private void btnStudents() throws IOException {
+
+        App.setRoot("Students");
 
     }
 

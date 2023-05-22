@@ -4,20 +4,34 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.util.Objects;
 
+public class StudentController {
 
-public class LoginController {
+    @FXML
+    private void btnSubjects() throws IOException {
 
-    private final String key = "22550658";
-    private final String password = "Hola";
+        App.setRoot("Subjects");
 
+    }
+
+    @FXML
+    private void btnHome() throws IOException {
+
+        App.setRoot("Home");
+
+    }
+
+    @FXML
+    private void btnTeachers() throws IOException {
+
+        App.setRoot("Teachers");
+
+    }
 
     @FXML
     private void openPopup() throws IOException {
@@ -37,34 +51,4 @@ public class LoginController {
         popupStage.setY(coordinateY);
 
     }
-
-    @FXML
-    private void btnLogin() throws IOException {
-
-    String key1 = txt_key.getText();
-    String password1 = txt_password.getText();
-
-    if (key1.equals(key) && password1.equals(password)){
-
-        App.setRoot("Main");
-
-    }else {
-
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText("Usuario o Contraseña Invalidos.");
-        alert.showAndWait();
-
-        }
-    }
-
-    @FXML
-    private TextField txt_key;
-
-    @FXML
-    private TextField txt_password;
-
-
-
 }

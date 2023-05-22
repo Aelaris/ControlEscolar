@@ -38,7 +38,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Alumno">
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnStudents" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Alumno">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -50,7 +50,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Maestro" translateY="-20.0">
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnTeachers" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Maestro" translateY="-20.0">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -74,7 +74,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Registrados" translateY="-60.0">
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Curso" translateY="-60.0">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -86,7 +86,19 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#openPopup" prefHeight="42.0" prefWidth="158.0" stylesheets="@../../css/botonSalir.css" text="Salir" translateY="30.0">
+                  <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Registrados" translateY="-80.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imagenes/tuition_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#openPopup" prefHeight="42.0" prefWidth="158.0" stylesheets="@../../css/botonSalir.css" text="Salir" translateY="-20.0">
                             <effect>
                                 <DropShadow>
                                     <color>
@@ -130,7 +142,7 @@
                         </Label>
                     </children>
                 </Pane>
-            <Button graphicTextGap="15.0" layoutX="431.0" layoutY="239.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Alumnos">
+            <Button graphicTextGap="15.0" layoutX="431.0" layoutY="239.0" mnemonicParsing="false" onAction="#btnStudents" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Alumnos">
                <effect>
                   <DropShadow>
                      <color>
@@ -142,7 +154,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="611.0" layoutY="239.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Maestros">
+            <Button graphicTextGap="15.0" layoutX="611.0" layoutY="239.0" mnemonicParsing="false" onAction="#btnTeachers" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Maestros">
                <effect>
                   <DropShadow>
                      <color>

@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.SubjectsController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.TeacherController">
     <children>
         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" stylesheets="@../../css/botonesMain.css">
             <children>
@@ -53,7 +53,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnTeachers" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Maestro" translateY="-20.0">
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" style="-fx-background-color: #8FEAC3;" stylesheets="@../../css/botonIzquierda.css" text="Maestro" translateY="-20.0">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -65,7 +65,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" style="-fx-background-color: #8FEAC3;" stylesheets="@../../css/botonIzquierda.css" text="Materias" translateY="-40.0">
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnSubjects" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Materias" translateY="-40.0">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -101,7 +101,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                        <Button fx:id="btn_exit" graphicTextGap="15.0" mnemonicParsing="false" onAction="#openPopup" prefHeight="42.0" prefWidth="158.0" stylesheets="@../../css/botonSalir.css" text="Salir" translateY="-20.0">
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#openPopup" prefHeight="42.0" prefWidth="158.0" stylesheets="@../../css/botonSalir.css" text="Salir" translateY="-20.0">
                             <effect>
                                 <DropShadow>
                                     <color>
@@ -138,54 +138,99 @@
                                 <Image url="@../../imagenes/Myproject.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="680.0" layoutY="15.0" text="Materias" textAlignment="CENTER" textFill="WHITE">
+                        <Label layoutX="683.0" layoutY="15.0" text="Maestros" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font size="50.0" />
                             </font>
                         </Label>
                     </children>
                 </Pane>
-            <Label layoutX="412.0" layoutY="233.0" text="Clave:" textAlignment="RIGHT" textFill="#8f8f8f">
+            <Label layoutX="385.0" layoutY="177.0" text="Nombre:" textAlignment="RIGHT" textFill="#8f8f8f">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="389.0" layoutY="283.0" text="Nombre:" textAlignment="RIGHT" textFill="#8f8f8f">
+            <TextField fx:id="txt_nameTeacher" layoutX="466.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0" promptText="Nombre" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txt_lastName1Teacher" layoutX="466.0" layoutY="224.0" prefHeight="25.0" prefWidth="200.0" promptText="Apellido Paterno" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txt_lastName2Teacher" layoutX="466.0" layoutY="274.0" prefHeight="25.0" prefWidth="200.0" promptText="Apellido Materno" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="319.0" layoutY="227.0" text="Apellido Paterno:" textAlignment="RIGHT" textFill="#8f8f8f">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="382.0" layoutY="333.0" text="Semestre:" textAlignment="RIGHT" textFill="#8f8f8f">
+            <Label layoutX="313.0" layoutY="277.0" text="Apellido Materno:" textAlignment="RIGHT" textFill="#8f8f8f">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="389.0" layoutY="383.0" text="Creditos:" textAlignment="RIGHT" textFill="#8f8f8f">
+            <Label layoutX="923.0" layoutY="177.0" text="Curp:" textAlignment="RIGHT" textFill="#8f8f8f">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txt_clave" layoutX="466.0" layoutY="230.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+            <TextField fx:id="txt_curpTeacher" layoutX="976.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0" promptText="Curp" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="txt_nameSubject" layoutX="466.0" layoutY="280.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+            <TextField fx:id="txt_cel" layoutX="976.0" layoutY="224.0" prefHeight="25.0" prefWidth="200.0" promptText="Celular" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="txt_SemesterSubject" layoutX="466.0" layoutY="330.0" prefHeight="33.0" prefWidth="47.0" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+            <Label layoutX="906.0" layoutY="227.0" text="Celular:" textAlignment="RIGHT" textFill="#8f8f8f">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="793.0" layoutY="277.0" text="Fecha de Nacimiento:" textAlignment="RIGHT" textFill="#8f8f8f">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_monthTeacher" alignment="CENTER" layoutX="1047.0" layoutY="274.0" prefHeight="33.0" prefWidth="49.0" promptText="Mes" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="txt_creditsSubject" layoutX="466.0" layoutY="380.0" prefHeight="33.0" prefWidth="47.0" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+            <TextField fx:id="txt_yearTeacher" alignment="CENTER" layoutX="1117.0" layoutY="274.0" prefHeight="33.0" prefWidth="59.0" promptText="Año" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Button graphicTextGap="15.0" layoutX="435.0" layoutY="523.0" mnemonicParsing="false" onAction="#btnCreateSubject" prefHeight="63.0" prefWidth="207.0" stylesheets="@../../css/botonesMain.css" text="Registrar">
+            <TextField fx:id="txt_dayTeacher" alignment="CENTER" layoutX="976.0" layoutY="274.0" prefHeight="33.0" prefWidth="49.0" promptText="Dia" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="txt_viewTeachers" layoutX="289.0" layoutY="435.0" prefHeight="235.0" prefWidth="665.0" stylesheets="@../../css/Tabla.css">
+               <columns>
+                  <TableColumn fx:id="txt_nT" prefWidth="88.0" text="Nombre" />
+                  <TableColumn fx:id="txt_a1T" prefWidth="105.60000610351562" text="Apellido Paterno" />
+                  <TableColumn fx:id="txt_a2T" minWidth="0.0" prefWidth="106.4000244140625" text="Apellido Materno" />
+                  <TableColumn fx:id="txt_cT" prefWidth="156.79998779296875" text="Curp" />
+                  <TableColumn fx:id="txt_clT" prefWidth="73.60003662109375" text="Celular" />
+                  <TableColumn fx:id="txt_fT" prefWidth="131.99993896484375" text="Fecha de Nacimiento" />
+               </columns>
+            </TableView>
+            <Label layoutX="532.0" layoutY="383.0" prefHeight="35.0" prefWidth="179.0" text="Mestros Registados" textFill="#8f8f8f">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button graphicTextGap="15.0" layoutX="980.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnCreateTeacher" prefHeight="0.0" prefWidth="192.0" stylesheets="@../../css/botonesMain.css" text="Registrar">
                <effect>
                   <DropShadow>
                      <color>
@@ -204,15 +249,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <TableView fx:id="txt_viewSubjects" layoutX="738.0" layoutY="237.0" prefHeight="235.0" prefWidth="459.0" stylesheets="@../../css/Tabla.css">
-              <columns>
-                <TableColumn fx:id="txt_c" prefWidth="68.800048828125" text="Clave" />
-                <TableColumn fx:id="txt_n" prefWidth="259.19989013671875" text="Nombre" />
-                  <TableColumn fx:id="txt_s" minWidth="0.0" prefWidth="70.39996337890625" text="Semestre" />
-                  <TableColumn fx:id="txt_cr" prefWidth="60.7999267578125" text="Creditos" />
-              </columns>
-            </TableView>
-            <Button graphicTextGap="15.0" layoutX="864.0" layoutY="523.0" mnemonicParsing="false" onAction="#UpdateTextView" prefHeight="63.0" prefWidth="207.0" stylesheets="@../../css/botonesMain.css" text="Actualizar">
+            <Button graphicTextGap="15.0" layoutX="526.0" layoutY="701.0" mnemonicParsing="false" onAction="#UpdateTextView" prefHeight="0.0" prefWidth="192.0" stylesheets="@../../css/botonesMain.css" text="Actualizar">
                <effect>
                   <DropShadow>
                      <color>
