@@ -52,4 +52,12 @@ public class HomeController {
         App.setRoot("Students");
 
     }
+
+    @FXML
+    private void btnCourses() throws IOException {
+
+        App.setRoot("Course");
+
+    }
+
 }

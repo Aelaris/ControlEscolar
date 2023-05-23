@@ -42,6 +42,10 @@
 	-fx-border-radius:2em;
 }
 
+.table-view .scroll-bar {
+    -fx-opacity: 0; /* Hace la barra de desplazamiento completamente transparente */
+}
+
 /* The main scrollbar **thumb** CSS class which we drag every time (movable) */
 .table-view .scroll-bar:horizontal .thumb,
 .table-view .scroll-bar:vertical .thumb {

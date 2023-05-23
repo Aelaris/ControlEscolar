@@ -89,4 +89,10 @@ public class Subject {
             this.credits = credits;
         }
     }
+
+    public String toString(){
+
+        return "CLAVE: "+clave+"\nNOMBRE: "+name+"\nSEMESTRE: "+semester+"\nCREDITOS: "+credits;
+
+    }
 }

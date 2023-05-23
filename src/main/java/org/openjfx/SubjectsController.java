@@ -3,7 +3,6 @@ package org.openjfx;
 import exceptions.ClaveSubject;
 import exceptions.CreditsSubject;
 import exceptions.SemesterSubject;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,14 +16,20 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.Subject;
-import repository.SubjectsRepository;
+import repository.DataStore;
+
 import java.io.IOException;
 import java.util.Objects;
 
 public class SubjectsController {
 
-    private SubjectsRepository subjectsRepository = new SubjectsRepository();
     private Subject subject;
+
+    @FXML
+    public void initialize() {
+
+        UpdateTextView();
+    }
 
     private void createSubject() throws IOException {
 
@@ -36,7 +41,7 @@ public class SubjectsController {
 
             subject = new Subject(clave, name, semester, credits);
 
-            subjectsRepository.createSubject(subject);
+            DataStore.addSubject(subject);
 
         }catch (ClaveSubject | SemesterSubject | CreditsSubject e) {
 
@@ -61,12 +66,25 @@ public class SubjectsController {
 
         createSubject();
 
+        if (subject != null) {
+            clearSubjects();
+        }
+    }
+
+    @FXML
+    private void btnDeleteSubject() {
+
+        Subject selectedSubject = txt_viewSubjects.getSelectionModel().getSelectedItem();
+
+        if (selectedSubject != null) {
+            DataStore.removeSubject(selectedSubject);
+        }
     }
 
     @FXML
     private void UpdateTextView() {
 
-        ObservableList<Subject> subjects = FXCollections.observableArrayList(subjectsRepository.getSubject());
+        ObservableList<Subject> subjects = DataStore.getSubjects();
 
         txt_c.setCellValueFactory(new PropertyValueFactory<>("clave"));
         txt_n.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -74,6 +92,15 @@ public class SubjectsController {
         txt_cr.setCellValueFactory(new PropertyValueFactory<>("credits"));
 
         txt_viewSubjects.setItems(subjects);
+    }
+
+    @FXML
+    private void clearSubjects() {
+
+        txt_clave.clear();
+        txt_nameSubject.clear();
+        txt_SemesterSubject.clear();
+        txt_creditsSubject.clear();
     }
 
     @FXML
@@ -113,6 +140,13 @@ public class SubjectsController {
     private void btnStudents() throws IOException {
 
         App.setRoot("Students");
+
+    }
+
+    @FXML
+    private void btnCourses() throws IOException {
+
+        App.setRoot("Course");
 
     }
 

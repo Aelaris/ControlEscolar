@@ -95,4 +95,10 @@ public class Teacher {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    public String toString() {
+
+        return "NOMBRE: "+name+" "+lastName1+" "+lastName2+"\nCELULAR: "+cellphone+"\nCURP: "+curp;
+
+    }
 }

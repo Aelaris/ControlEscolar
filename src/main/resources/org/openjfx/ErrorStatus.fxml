@@ -13,7 +13,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Text fill="#8f8f8f" layoutX="67.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;El Nombre no Cumple con el Formato Requerido.&quot;" textAlignment="CENTER" wrappingWidth="366.6644287109375">
+      <Text fill="#8f8f8f" layoutX="67.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Formato de status inválido. Debe seguir el formato: 'BD' o 'BT' seguido de un dígito (1-9).&quot;" textAlignment="CENTER" wrappingWidth="366.6644287109375">
          <font>
             <Font size="24.0" />
          </font>

@@ -1,7 +1,6 @@
 package org.openjfx;
 
 import exceptions.*;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +15,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.Date;
 import model.Teacher;
-import repository.TeacherRepository;
+import repository.DataStore;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -24,9 +23,45 @@ public class TeacherController {
 
     private Teacher teacher;
     private Date date;
-    private TeacherRepository teacherRepository = new TeacherRepository();
+
 
     public TeacherController(){}
+
+    @FXML
+    public void initialize() {
+
+        UpdateTextView();
+
+        txt_viewTeachers.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                updateTeacherFields(newSelection);
+            }
+        });
+    }
+
+    private void updateTeacherFields(Teacher teacher) {
+
+        Teacher selectedTeacher = txt_viewTeachers.getSelectionModel().getSelectedItem();
+
+        if (selectedTeacher != null) {
+
+            txt_nameTeacher.setText(selectedTeacher.getName());
+            txt_lastName1Teacher.setText(selectedTeacher.getLastName1());
+            txt_lastName2Teacher.setText(selectedTeacher.getLastName2());
+            txt_curpTeacher.setText(selectedTeacher.getCurp());
+            txt_cel.setText(selectedTeacher.getCellphone());
+
+            Date date = selectedTeacher.getDate();
+
+            if (date != null) {
+
+                txt_dayTeacher.setText(Integer.toString(date.getDay()));
+                txt_monthTeacher.setText(Integer.toString(date.getMonth()));
+                txt_yearTeacher.setText(Integer.toString(date.getYear()));
+
+            }
+        }
+    }
 
 
     private void createTeacher() throws IOException {
@@ -39,7 +74,87 @@ public class TeacherController {
 
             date = new Date(day, month, year);
 
+            String name = txt_nameTeacher.getText();
+            String lastName1 = txt_lastName1Teacher.getText();
+            String lastName2 = txt_lastName2Teacher.getText();
+            String curp = txt_curpTeacher.getText();
+            String cellphone = txt_cel.getText();
+
+            teacher = new Teacher(name, lastName1, lastName2, curp, cellphone, date);
+            DataStore.addTeacher(teacher);
+
         }catch (InvalidDay | InvalidMonth | InvalidYear e) {
+
+            double coordinateX = 650;
+            double coordinateY = 300;
+
+            Stage popupStage = new Stage();
+            Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorDate.fxml")));
+            popupStage.setScene(new Scene(popupRoot));
+            popupStage.initStyle(StageStyle.UNDECORATED);
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.show();
+            popupStage.centerOnScreen();
+            popupStage.setX(coordinateX);
+            popupStage.setY(coordinateY);
+
+
+        }catch (InvalidName e) {
+
+            double coordinateX = 650;
+            double coordinateY = 300;
+
+            Stage popupStage = new Stage();
+            Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorName.fxml")));
+            popupStage.setScene(new Scene(popupRoot));
+            popupStage.initStyle(StageStyle.UNDECORATED);
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.show();
+            popupStage.centerOnScreen();
+            popupStage.setX(coordinateX);
+            popupStage.setY(coordinateY);
+        }
+    }
+
+    @FXML
+    private void btnCreateTeacher() throws IOException {
+
+        createTeacher();
+
+        if (teacher != null){
+            clearTeacher();
+        }
+
+    }
+
+    @FXML
+    private void btnDeleteTeacher() {
+
+        Teacher selectedTeacher = txt_viewTeachers.getSelectionModel().getSelectedItem();
+
+        if (selectedTeacher != null) {
+            DataStore.removeTeacher(selectedTeacher);
+        }
+
+        clearTeacher();
+
+    }
+
+    @FXML
+    private void btnUpdateTeacher() throws InvalidName, IOException {
+
+        Teacher selectedTeacher = txt_viewTeachers.getSelectionModel().getSelectedItem();
+
+        int day = Integer.parseInt(txt_dayTeacher.getText());
+        int month = Integer.parseInt(txt_monthTeacher.getText());
+        int year = Integer.parseInt(txt_yearTeacher.getText());
+
+        Date newDate = null;
+        try {
+
+            newDate = new Date(day, month, year);
+
+        } catch (InvalidDay | InvalidMonth | InvalidYear ex) {
 
             double coordinateX = 650;
             double coordinateY = 300;
@@ -57,48 +172,28 @@ public class TeacherController {
 
         }
 
-        try {
+        if (selectedTeacher != null) {
 
-            String name = txt_nameTeacher.getText();
-            String lastName1 = txt_lastName1Teacher.getText();
-            String lastName2 = txt_lastName2Teacher.getText();
-            String curp = txt_curpTeacher.getText();
-            String cellphone = txt_cel.getText();
+            Teacher updatedTeacher = new Teacher(
 
-            teacher = new Teacher(name, lastName1, lastName2, curp, cellphone, date);
+                    txt_nameTeacher.getText(),
+                    txt_lastName1Teacher.getText(),
+                    txt_lastName2Teacher.getText(),
+                    txt_curpTeacher.getText(),
+                    txt_cel.getText(),
+                    newDate
+            );
 
-            teacherRepository.createTeacher(teacher);
+            DataStore.updateTeacher(selectedTeacher, updatedTeacher);
 
-        }catch (InvalidName e) {
-
-            double coordinateX = 650;
-            double coordinateY = 300;
-
-            Stage popupStage = new Stage();
-            Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorName.fxml")));
-            popupStage.setScene(new Scene(popupRoot));
-            popupStage.initStyle(StageStyle.UNDECORATED);
-            popupStage.initModality(Modality.APPLICATION_MODAL);
-            popupStage.show();
-
-            popupStage.centerOnScreen();
-            popupStage.setX(coordinateX);
-            popupStage.setY(coordinateY);
-
+            txt_viewTeachers.refresh();
         }
-    }
-
-    @FXML
-    private void btnCreateTeacher() throws IOException {
-
-        createTeacher();
-
     }
 
     @FXML
     private void UpdateTextView() {
 
-        ObservableList<Teacher> teachers = FXCollections.observableArrayList(teacherRepository.getTeachers());
+        ObservableList<Teacher> teachers = DataStore.getTeachers();
 
         txt_nT.setCellValueFactory(new PropertyValueFactory<>("name"));
         txt_a1T.setCellValueFactory(new PropertyValueFactory<>("lastName1"));
@@ -108,6 +203,21 @@ public class TeacherController {
         txt_fT.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         txt_viewTeachers.setItems(teachers);
+    }
+
+    @FXML
+    private void clearTeacher() {
+
+        txt_nameTeacher.clear();
+        txt_lastName1Teacher.clear();
+        txt_lastName2Teacher.clear();
+        txt_curpTeacher.clear();
+        txt_cel.clear();
+
+        txt_dayTeacher.clear();
+        txt_monthTeacher.clear();
+        txt_yearTeacher.clear();
+
     }
 
     @FXML
@@ -128,6 +238,13 @@ public class TeacherController {
     private void btnStudents() throws IOException {
 
         App.setRoot("Students");
+
+    }
+
+    @FXML
+    private void btnCourses() throws IOException {
+
+        App.setRoot("Course");
 
     }
 
