@@ -49,19 +49,17 @@ public class StudentCourseController {
 
         txt_viewStudents.setItems(students);
         txt_viewCourses.setItems(courses);
-
     }
 
     @FXML
     private void registerCourses() {
+
         Student selectedStudent = txt_viewStudents.getSelectionModel().getSelectedItem();
         ObservableList<Course> selectedCourses = txt_viewCourses.getSelectionModel().getSelectedItems();
 
         if (selectedStudent != null && selectedCourses != null && !selectedCourses.isEmpty()) {
             StudentCourses studentCourses = new StudentCourses(selectedStudent, selectedCourses);
-            // Luego puedes añadir este objeto a una lista de objetos StudentCourses
-            // Esta lista se puede usar luego para llenar la tabla en el otro controlador.
-            // Por ejemplo:
+
             DataStore.addStudentCourses(studentCourses);
         }
     }

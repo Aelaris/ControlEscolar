@@ -26,7 +26,6 @@ public class StudentController {
     private Date date;
     private Student student;
 
-
     @FXML
     public void initialize() {
 
@@ -95,7 +94,6 @@ public class StudentController {
             popupStage.setX(coordinateX);
             popupStage.setY(coordinateY);
 
-
         }catch (InvalidName e) {
 
             double coordinateX = 650;
@@ -157,7 +155,6 @@ public class StudentController {
             popupStage.centerOnScreen();
             popupStage.setX(coordinateX);
             popupStage.setY(coordinateY);
-
         }
 
         if (selectedStudent != null) {
@@ -173,11 +170,9 @@ public class StudentController {
                     newDate,
                     cb_gender.getValue(),
                     txt_status.getText()
-
             );
 
             DataStore.updateStudent(selectedStudent, updatedStudent);
-
             txt_viewStudents.refresh();
         }
     }
@@ -192,7 +187,6 @@ public class StudentController {
         }
 
         clearStudent();
-
     }
 
     private void updateStudentFields(Student student) {
@@ -216,7 +210,6 @@ public class StudentController {
                 txt_dayStudent.setText(Integer.toString(date.getDay()));
                 txt_monthStudent.setText(Integer.toString(date.getMonth()));
                 txt_yearStudent.setText(Integer.toString(date.getYear()));
-
             }
         }
     }
@@ -229,7 +222,6 @@ public class StudentController {
         if (student != null){
             clearStudent();
         }
-
     }
 
     @FXML
@@ -247,7 +239,6 @@ public class StudentController {
         txt_dayStudent.clear();
         txt_monthStudent.clear();
         txt_yearStudent.clear();
-
     }
 
     @FXML

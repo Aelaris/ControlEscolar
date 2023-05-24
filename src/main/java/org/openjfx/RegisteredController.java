@@ -13,13 +13,11 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.StudentCourses;
 import repository.DataStore;
-import model.Course;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class RegisteredController {
-
 
     public void initialize() {
         updateTableview();
@@ -36,7 +34,6 @@ public class RegisteredController {
                         .map(course -> course.getSubject().getName()) // Asumiendo que hay un método getName() que retorna el nombre de la materia.
                         .collect(Collectors.joining(", "))
         ));
-
         txt_viewCoursesStudent.setItems(studentCourses);
     }
 
@@ -65,7 +62,6 @@ public class RegisteredController {
         App.setRoot("Course");
     }
 
-
     @FXML
     private void openPopup() throws IOException {
         double coordinateX = 650;
@@ -80,7 +76,6 @@ public class RegisteredController {
         popupStage.centerOnScreen();
         popupStage.setX(coordinateX);
         popupStage.setY(coordinateY);
-
     }
 
     @FXML

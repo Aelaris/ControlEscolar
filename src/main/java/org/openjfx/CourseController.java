@@ -127,7 +127,6 @@ public class CourseController {
     @FXML
     private TableColumn<Teacher, String> txt_nT;
 
-
     @FXML
     private TableColumn<Subject, String> txt_sM;
 
