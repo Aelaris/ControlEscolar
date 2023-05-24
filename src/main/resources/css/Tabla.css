@@ -12,9 +12,9 @@
 }
 .table-view .cell{
    -fx-cell-size: 30;
-  -fx-alignment: center-left;
-  -fx-text-fill: #000000;
-  -fx-alignment: CENTER_LEFT;
+  -fx-alignment: center;
+  -fx-text-fill: #8F8F8F;
+  -fx-alignment: CENTER;
 }
 
 .table-row-cell:selected {

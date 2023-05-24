@@ -138,11 +138,16 @@
                                 <Image url="@../../imagenes/Myproject.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="680.0" layoutY="15.0" text="Materias" textAlignment="CENTER" textFill="WHITE">
-                            <font>
-                                <Font size="50.0" />
-                            </font>
-                        </Label>
+                  <ImageView fitHeight="102.0" fitWidth="1022.0" layoutX="260.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/baner1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="542.0" layoutY="15.0" text="Registro de Materias" textAlignment="CENTER" textFill="#c2c2c2">
+                     <font>
+                        <Font size="50.0" />
+                     </font>
+                  </Label>
                     </children>
                 </Pane>
             <Label layoutX="412.0" layoutY="233.0" text="Clave:" textAlignment="RIGHT" textFill="#8f8f8f">
@@ -212,7 +217,7 @@
                   <TableColumn fx:id="txt_cr" prefWidth="60.7999267578125" text="Creditos" />
               </columns>
             </TableView>
-            <Button graphicTextGap="15.0" layoutX="895.0" layoutY="537.0" mnemonicParsing="false" onAction="#btnDeleteSubject" prefHeight="33.0" prefWidth="146.0" stylesheets="@../../css/botonUpdate.css" text="Eliminar">
+            <Button graphicTextGap="15.0" layoutX="895.0" layoutY="537.0" mnemonicParsing="false" onAction="#btnDeleteSubject" prefHeight="33.0" prefWidth="146.0" stylesheets="@../../css/botonDelete.css" text="Eliminar">
                <effect>
                   <DropShadow>
                      <color>
@@ -231,6 +236,11 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Label layoutX="872.0" layoutY="195.0" prefHeight="35.0" prefWidth="192.0" text="Materias Registradas" textFill="#8f8f8f">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
     </children>

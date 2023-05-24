@@ -46,7 +46,7 @@ public class LoginController {
 
     if (key1.equals(key) && password1.equals(password)){
 
-        App.setRoot("Main");
+        App.setRoot("Home");
 
     }else {
 

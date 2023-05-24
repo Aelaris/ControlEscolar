@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.TeacherController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.StudentCourseController">
     <children>
         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" stylesheets="@../../css/botonesMain.css">
             <children>
@@ -53,7 +52,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" style="-fx-background-color: #8FEAC3;" stylesheets="@../../css/botonIzquierda.css" text="Maestro" translateY="-20.0">
+                        <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnTeachers" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Maestro" translateY="-20.0">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -143,99 +142,30 @@
                         <Image url="@../../imagenes/baner1.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="536.0" layoutY="15.0" text="Registro de Maestros" textAlignment="CENTER" textFill="#c2c2c2">
+                  <Label layoutX="439.0" layoutY="15.0" text="Registro de Alumnos a Cursos" textAlignment="CENTER" textFill="#c2c2c2">
                      <font>
                         <Font size="50.0" />
                      </font>
                   </Label>
                     </children>
                 </Pane>
-            <Label layoutX="384.0" layoutY="171.0" text="Nombre:" textAlignment="RIGHT" textFill="#8f8f8f">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txt_nameTeacher" layoutX="465.0" layoutY="168.0" prefHeight="25.0" prefWidth="200.0" promptText="Nombre" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txt_lastName1Teacher" layoutX="465.0" layoutY="218.0" prefHeight="25.0" prefWidth="200.0" promptText="Apellido Paterno" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txt_lastName2Teacher" layoutX="465.0" layoutY="268.0" prefHeight="25.0" prefWidth="200.0" promptText="Apellido Materno" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <Label layoutX="318.0" layoutY="221.0" text="Apellido Paterno:" textAlignment="RIGHT" textFill="#8f8f8f">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="312.0" layoutY="271.0" text="Apellido Materno:" textAlignment="RIGHT" textFill="#8f8f8f">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="922.0" layoutY="171.0" text="Curp:" textAlignment="RIGHT" textFill="#8f8f8f">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txt_curpTeacher" layoutX="975.0" layoutY="168.0" prefHeight="25.0" prefWidth="200.0" promptText="Curp" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txt_cel" layoutX="975.0" layoutY="218.0" prefHeight="25.0" prefWidth="200.0" promptText="Celular" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <Label layoutX="905.0" layoutY="221.0" text="Celular:" textAlignment="RIGHT" textFill="#8f8f8f">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="792.0" layoutY="271.0" text="Fecha de Nacimiento:" textAlignment="RIGHT" textFill="#8f8f8f">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txt_monthTeacher" alignment="CENTER" layoutX="1046.0" layoutY="268.0" prefHeight="33.0" prefWidth="49.0" promptText="Mes" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txt_yearTeacher" alignment="CENTER" layoutX="1116.0" layoutY="268.0" prefHeight="33.0" prefWidth="59.0" promptText="Año" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txt_dayTeacher" alignment="CENTER" layoutX="975.0" layoutY="268.0" prefHeight="33.0" prefWidth="49.0" promptText="Dia" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TableView fx:id="txt_viewTeachers" layoutX="289.0" layoutY="435.0" prefHeight="235.0" prefWidth="665.0" stylesheets="@../../css/Tabla.css">
+            <TableView fx:id="txt_viewCourses" layoutX="350.0" layoutY="504.0" prefHeight="204.0" prefWidth="430.0" stylesheets="@../../css/Tabla.css">
                <columns>
-                  <TableColumn fx:id="txt_nT" prefWidth="88.0" text="Nombre" />
-                  <TableColumn fx:id="txt_a1T" prefWidth="105.60000610351562" text="Apellido Paterno" />
-                  <TableColumn fx:id="txt_a2T" minWidth="0.0" prefWidth="106.4000244140625" text="Apellido Materno" />
-                  <TableColumn fx:id="txt_cT" prefWidth="156.79998779296875" text="Curp" />
-                  <TableColumn fx:id="txt_clT" prefWidth="73.60003662109375" text="Celular" />
-                  <TableColumn fx:id="txt_fT" prefWidth="131.99993896484375" text="Fecha de Nacimiento" />
+                  <TableColumn fx:id="txt_mC" prefWidth="216.80001831054688" text="Maestro" />
+                  <TableColumn fx:id="txt_sC" prefWidth="211.5999755859375" text="Materia" />
                </columns>
             </TableView>
-            <Label layoutX="533.0" layoutY="382.0" prefHeight="35.0" prefWidth="179.0" text="Mestros Registados" textFill="#8f8f8f">
+            <Label layoutX="680.0" layoutY="149.0" prefHeight="35.0" prefWidth="189.0" text="Alumnos Registrados" textFill="#8f8f8f">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button graphicTextGap="15.0" layoutX="1020.0" layoutY="435.0" mnemonicParsing="false" onAction="#btnCreateTeacher" prefHeight="0.0" prefWidth="192.0" stylesheets="@../../css/botonesMain.css" text="Registrar">
+            <Label layoutX="478.0" layoutY="451.0" prefHeight="35.0" prefWidth="174.0" text="Cursos Registrados" textFill="#8f8f8f">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button graphicTextGap="15.0" layoutX="836.0" layoutY="504.0" mnemonicParsing="false" onAction="#registerCourses" prefHeight="52.0" prefWidth="296.0" stylesheets="@../../css/boton.css" text="Registrar">
                <effect>
                   <DropShadow>
                      <color>
@@ -247,33 +177,27 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../imagenes/home_page_480px.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="1041.0" layoutY="634.0" mnemonicParsing="false" onAction="#btnDeleteTeacher" prefHeight="36.0" prefWidth="150.0" stylesheets="@../../css/botonDelete.css" text="Eliminar">
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color opacity="0.5197568535804749" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../imagenes/home_page_480px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button graphicTextGap="15.0" layoutX="1041.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnUpdateTeacher" prefHeight="19.0" prefWidth="150.0" stylesheets="@../../css/botonUpdate.css" text="Actualizar">
+            <TableView fx:id="txt_viewStudents" layoutX="331.0" layoutY="196.0" prefHeight="204.0" prefWidth="897.0" stylesheets="@../../css/Tabla.css">
+               <columns>
+                  <TableColumn fx:id="txt_nS" prefWidth="88.0" text="Nombre" />
+                  <TableColumn fx:id="txt_lnS1" prefWidth="105.60000610351562" text="Apellido Paterno" />
+                  <TableColumn fx:id="txt_lnS2" minWidth="0.0" prefWidth="106.4000244140625" text="Apellido Materno" />
+                  <TableColumn fx:id="txt_cS" prefWidth="142.4000244140625" text="Curp" />
+                  <TableColumn fx:id="txt_fS" prefWidth="124.0" text="Fecha de Nacimiento" />
+                  <TableColumn fx:id="txt_gS" prefWidth="72.0" text="Genero" />
+                  <TableColumn fx:id="txt_nC" prefWidth="116.0001220703125" text="Numero de Control" />
+                  <TableColumn fx:id="txt_celS" prefWidth="72.0" text="Celular" />
+                  <TableColumn fx:id="txt_sS" prefWidth="66.4000244140625" text="Estatus" />
+               </columns>
+            </TableView>
+            <Button graphicTextGap="15.0" layoutX="894.0" layoutY="672.0" mnemonicParsing="false" onAction="#btnRegister" prefHeight="36.0" prefWidth="181.0" stylesheets="@../../css/botonUpdate.css" text="Ver Registrados">
                <effect>
                   <DropShadow>
                      <color>
@@ -286,25 +210,6 @@
                </cursor>
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../imagenes/home_page_480px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button graphicTextGap="23.0" layoutX="461.0" layoutY="718.0" mnemonicParsing="false" onAction="#btnCourses" prefHeight="36.0" prefWidth="323.0" stylesheets="@../../css/botonUpdate.css" text="Seleccionar Materia" textAlignment="CENTER">
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color opacity="0.5197568535804749" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../imagenes/home_page_480px.png" />
                      </image>

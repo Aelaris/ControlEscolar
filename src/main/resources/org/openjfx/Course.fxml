@@ -137,11 +137,16 @@
                                 <Image url="@../../imagenes/Myproject.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="709.0" layoutY="15.0" text="Cursos" textAlignment="CENTER" textFill="WHITE">
-                            <font>
-                                <Font size="50.0" />
-                            </font>
-                        </Label>
+                  <ImageView fitHeight="102.0" fitWidth="1022.0" layoutX="260.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/baner1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="563.0" layoutY="15.0" text="Registro de Cursos" textAlignment="CENTER" textFill="#c2c2c2">
+                     <font>
+                        <Font size="50.0" />
+                     </font>
+                  </Label>
                     </children>
                 </Pane>
             <TableView fx:id="txt_viewTeachers" layoutX="318.0" layoutY="190.0" prefHeight="204.0" prefWidth="455.0" stylesheets="@../../css/Tabla.css">
@@ -170,7 +175,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button graphicTextGap="15.0" layoutX="612.0" layoutY="414.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="71.0" prefWidth="327.0" stylesheets="@../../css/boton.css" text="Registrar Curso">
+            <Button graphicTextGap="15.0" layoutX="628.0" layoutY="414.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="52.0" prefWidth="296.0" stylesheets="@../../css/boton.css" text="Registrar Curso">
                <effect>
                   <DropShadow>
                      <color>
@@ -182,19 +187,24 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../imagenes/home_page_480px.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <TableView fx:id="txt_viewCourses" layoutX="321.0" layoutY="513.0" prefHeight="204.0" prefWidth="910.0" stylesheets="@../../css/Tabla.css">
+            <TableView fx:id="txt_viewCourses" layoutX="321.0" layoutY="562.0" prefHeight="204.0" prefWidth="910.0" stylesheets="@../../css/Tabla.css">
                <columns>
                   <TableColumn fx:id="txt_teacherCourse" prefWidth="454.3999938964844" text="Maestro" />
                   <TableColumn fx:id="txt_subjectCourse" prefWidth="455.19989013671875" text="Materia" />
                </columns>
             </TableView>
+            <Label layoutX="697.0" layoutY="512.0" prefHeight="35.0" prefWidth="158.0" text="Curso Registrado" textFill="#8f8f8f">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
     </children>

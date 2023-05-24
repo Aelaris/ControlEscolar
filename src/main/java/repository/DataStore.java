@@ -1,12 +1,10 @@
 package repository;
 
 import exceptions.InvalidName;
+import exceptions.InvalidStatus;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Course;
-import model.Student;
-import model.Subject;
-import model.Teacher;
+import model.*;
 
 public class DataStore {
 
@@ -14,6 +12,16 @@ public class DataStore {
     private static ObservableList<Subject> subjects = FXCollections.observableArrayList();
     private static ObservableList<Course> courses = FXCollections.observableArrayList();
     private static ObservableList<Student> students = FXCollections.observableArrayList();
+    private static ObservableList<StudentCourses> studentCourses = FXCollections.observableArrayList();
+
+
+    public static ObservableList<StudentCourses> getStudentCourses() {
+        return studentCourses;
+    }
+
+    public static void addStudentCourses(StudentCourses newStudentCourses) {
+        studentCourses.add(newStudentCourses);
+    }
 
     public static ObservableList<Teacher> getTeachers() {
         return teachers;
@@ -71,6 +79,20 @@ public class DataStore {
         oldTeacher.setCurp(newTeacher.getCurp());
         oldTeacher.setCellphone(newTeacher.getCellphone());
         oldTeacher.setDate(newTeacher.getDate());
+
+    }
+
+    public static void updateStudent(Student oldStudent, Student newStudent) throws InvalidName, InvalidStatus {
+
+        oldStudent.setName(newStudent.getName());
+        oldStudent.setLastName1(newStudent.getLastName1());
+        oldStudent.setLastName2(newStudent.getLastName2());
+        oldStudent.setNumControl(newStudent.getNumControl());
+        oldStudent.setCurp(newStudent.getCurp());
+        oldStudent.setCellphone(newStudent.getCellphone());
+        oldStudent.setDate(newStudent.getDate());
+        oldStudent.setGender(newStudent.getGender());
+        oldStudent.setStatus(newStudent.getStatus());
 
     }
 

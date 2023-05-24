@@ -21,7 +21,7 @@
     <children>
         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" stylesheets="@../../css/botonesMain.css">
             <children>
-            <TextField fx:id="txt_status" layoutX="975.0" layoutY="368.0" prefHeight="25.0" prefWidth="200.0" promptText="Estatus" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+            <TextField fx:id="txt_status" focusTraversable="false" layoutX="975.0" layoutY="368.0" prefHeight="25.0" prefWidth="200.0" promptText="Baja" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>
@@ -144,11 +144,16 @@
                                 <Image url="@../../imagenes/Myproject.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="683.0" layoutY="15.0" text="Alumnos" textAlignment="CENTER" textFill="WHITE">
-                            <font>
-                                <Font size="50.0" />
-                            </font>
-                        </Label>
+                  <ImageView fitHeight="102.0" fitWidth="1022.0" layoutX="260.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/baner1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="540.0" layoutY="15.0" text="Registro de Alumnos" textAlignment="CENTER" textFill="#c2c2c2">
+                     <font>
+                        <Font size="50.0" />
+                     </font>
+                  </Label>
                     </children>
                 </Pane>
             <Label layoutX="384.0" layoutY="171.0" text="Nombre:" textAlignment="RIGHT" textFill="#8f8f8f">
@@ -245,7 +250,7 @@
                   <TableColumn fx:id="txt_cS" prefWidth="156.79998779296875" text="Curp" />
                   <TableColumn fx:id="txt_cellS" prefWidth="73.60003662109375" text="Celular" />
                   <TableColumn fx:id="txt_fS" prefWidth="131.99993896484375" text="Fecha de Nacimiento" />
-                  <TableColumn fx:id="txt_gS" prefWidth="79.199951171875" text="Genero" />
+                  <TableColumn fx:id="txt_gS" prefWidth="79.199951171875" text="Estatus" />
                </columns>
             </TableView>
             <Button graphicTextGap="15.0" layoutX="1063.0" layoutY="474.0" mnemonicParsing="false" onAction="#btnCreateStudent" prefHeight="0.0" prefWidth="192.0" stylesheets="@../../css/botonesMain.css" text="Registrar">
@@ -272,7 +277,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button graphicTextGap="15.0" layoutX="1084.0" layoutY="556.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="150.0" stylesheets="@../../css/botonUpdate.css" text="Actualizar">
+            <Button graphicTextGap="15.0" layoutX="1084.0" layoutY="556.0" mnemonicParsing="false" onAction="#btnUpdateStudent" prefHeight="19.0" prefWidth="150.0" stylesheets="@../../css/botonUpdate.css" text="Actualizar">
                <effect>
                   <DropShadow>
                      <color>
@@ -291,7 +296,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="1084.0" layoutY="673.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="150.0" stylesheets="@../../css/botonUpdate.css" text="Eliminar">
+            <Button graphicTextGap="15.0" layoutX="1084.0" layoutY="673.0" mnemonicParsing="false" onAction="#btnDeleteStudent" prefHeight="19.0" prefWidth="150.0" stylesheets="@../../css/botonDelete.css" text="Eliminar">
                <effect>
                   <DropShadow>
                      <color>
@@ -310,7 +315,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="500.0" layoutY="739.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="323.0" stylesheets="@../../css/botonUpdate.css" text="Escoger Cursos">
+            <Button graphicTextGap="15.0" layoutX="500.0" layoutY="739.0" mnemonicParsing="false" onAction="#btnStudentCourse" prefHeight="36.0" prefWidth="323.0" stylesheets="@../../css/botonUpdate.css" text="Escoger Cursos">
                <effect>
                   <DropShadow>
                      <color>
@@ -329,7 +334,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="903.0" layoutY="371.0" prefHeight="27.0" prefWidth="62.0" text="Estatus:" textAlignment="RIGHT" textFill="#8f8f8f">
+            <Label layoutX="925.0" layoutY="371.0" prefHeight="27.0" prefWidth="42.0" text="Baja:" textAlignment="RIGHT" textFill="#8f8f8f">
                <font>
                   <Font size="18.0" />
                </font>

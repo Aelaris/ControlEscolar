@@ -169,7 +169,12 @@
                         <Image url="@../../imagenes/Myproject.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="537.0" layoutY="15.0" text="Control Escolar Login" textFill="WHITE">
+                  <ImageView fitHeight="102.0" fitWidth="1022.0" layoutX="260.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/baner1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="536.0" layoutY="15.0" text="Login Control Escolar" textAlignment="CENTER" textFill="#c2c2c2">
                      <font>
                         <Font size="50.0" />
                      </font>

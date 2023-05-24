@@ -25,4 +25,9 @@ public class Course {
     public void setSubject(Subject subject) {
         this.subject = subject;
     }
+
+    public String toString() {
+
+        return teacher+"\n\n"+subject;
+    }
 }
