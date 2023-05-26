@@ -6,9 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.IOException;
-
 
 public class App extends Application {
 
@@ -16,7 +14,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Home"));
+        scene = new Scene(loadFXML("Login"));
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();

@@ -124,7 +124,6 @@ public class TeacherController {
         if (teacher != null){
             clearTeacher();
         }
-
     }
 
     @FXML
@@ -137,7 +136,6 @@ public class TeacherController {
         }
 
         clearTeacher();
-
     }
 
     @FXML
@@ -169,7 +167,6 @@ public class TeacherController {
             popupStage.centerOnScreen();
             popupStage.setX(coordinateX);
             popupStage.setY(coordinateY);
-
         }
 
         if (selectedTeacher != null) {
@@ -217,36 +214,34 @@ public class TeacherController {
         txt_dayTeacher.clear();
         txt_monthTeacher.clear();
         txt_yearTeacher.clear();
-
     }
 
     @FXML
     private void btnSubjects() throws IOException {
-
         App.setRoot("Subjects");
-
     }
 
     @FXML
     private void btnHome() throws IOException {
-
         App.setRoot("Home");
-
     }
 
     @FXML
     private void btnStudents() throws IOException {
-
         App.setRoot("Students");
-
     }
 
     @FXML
     private void btnCourses() throws IOException {
-
         App.setRoot("Course");
-
     }
+
+    @FXML
+    private void btnRegistered() throws IOException {
+        App.setRoot("Registered");
+    }
+
+
 
     @FXML
     private void openPopup() throws IOException {

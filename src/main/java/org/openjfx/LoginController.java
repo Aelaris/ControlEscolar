@@ -15,8 +15,8 @@ import java.util.Objects;
 
 public class LoginController {
 
-    private final String key = "22550658";
-    private final String password = "Hola";
+    private final String key = "admin";
+    private final String password = "admin";
 
 
     @FXML
@@ -64,7 +64,5 @@ public class LoginController {
 
     @FXML
     private TextField txt_password;
-
-
 
 }

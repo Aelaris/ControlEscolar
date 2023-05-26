@@ -34,30 +34,27 @@ public class HomeController {
 
     @FXML
     private void btnSubjects() throws IOException {
-
         App.setRoot("Subjects");
-
     }
 
     @FXML
     private void btnTeachers() throws IOException {
-
         App.setRoot("Teachers");
-
     }
 
     @FXML
     private void btnStudents() throws IOException {
-
         App.setRoot("Students");
-
     }
 
     @FXML
     private void btnCourses() throws IOException {
-
         App.setRoot("Course");
+    }
 
+    @FXML
+    private void btnRegistered() throws IOException {
+        App.setRoot("Registered");
     }
 
 }

@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.Subject;
 import repository.DataStore;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -124,30 +123,27 @@ public class SubjectsController {
 
     @FXML
     private void btnHome() throws IOException {
-
         App.setRoot("Home");
-
     }
 
     @FXML
     private void btnTeachers() throws IOException {
-
         App.setRoot("Teachers");
-
     }
 
     @FXML
     private void btnStudents() throws IOException {
-
         App.setRoot("Students");
-
     }
 
     @FXML
     private void btnCourses() throws IOException {
-
         App.setRoot("Course");
+    }
 
+    @FXML
+    private void btnRegistered() throws IOException {
+        App.setRoot("Registered");
     }
 
     @FXML

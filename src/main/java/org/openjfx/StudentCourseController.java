@@ -95,6 +95,11 @@ public class StudentCourseController {
     }
 
     @FXML
+    private void btnRegistered() throws IOException {
+        App.setRoot("Registered");
+    }
+
+    @FXML
     private void openPopup() throws IOException {
         double coordinateX = 650;
         double coordinateY = 300;

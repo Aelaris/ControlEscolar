@@ -31,7 +31,7 @@ public class RegisteredController {
         txt_s.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStudent().getName()));
         txt_c.setCellValueFactory(cellData -> new SimpleStringProperty(
                 cellData.getValue().getCourses().stream()
-                        .map(course -> course.getSubject().getName()) // Asumiendo que hay un método getName() que retorna el nombre de la materia.
+                        .map(course -> course.getSubject().getName())
                         .collect(Collectors.joining(", "))
         ));
         txt_viewCoursesStudent.setItems(studentCourses);

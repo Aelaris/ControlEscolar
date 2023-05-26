@@ -86,7 +86,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                  <Button graphicTextGap="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Registrados" translateY="-80.0">
+                  <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnRegistered" prefHeight="37.0" prefWidth="167.0" stylesheets="@../../css/botonIzquierda.css" text="Registrados" translateY="-80.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -183,7 +183,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="775.0" layoutY="379.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Registrados">
+            <Button graphicTextGap="15.0" layoutX="775.0" layoutY="379.0" mnemonicParsing="false" onAction="#btnRegistered" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Registrados">
                <effect>
                   <DropShadow>
                      <color>

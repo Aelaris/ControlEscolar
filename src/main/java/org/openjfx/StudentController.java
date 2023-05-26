@@ -26,6 +26,7 @@ public class StudentController {
     private Date date;
     private Student student;
 
+
     @FXML
     public void initialize() {
 
@@ -264,6 +265,11 @@ public class StudentController {
     @FXML
     private void btnStudentCourse() throws IOException {
         App.setRoot("StudentCourse");
+    }
+
+    @FXML
+    private void btnRegistered() throws IOException {
+        App.setRoot("Registered");
     }
 
     @FXML

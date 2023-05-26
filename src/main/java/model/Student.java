@@ -13,17 +13,17 @@ public class Student {
     public Student(String name, String lastName1, String lastName2, String numControl, String curp, String cellphone,
                    Date date, String gender, String status) throws InvalidName, InvalidStatus {
 
-        if (!name.matches("[a-zA-Z]+")){
+        if (!name.matches("[a-zA-Z ]+")){
             throw new InvalidName("El nombre no tiene el formato adecuado.");
         }else {
             this.name = name;
         }
-        if (!lastName1.matches("[a-zA-Z]+")){
+        if (!lastName1.matches("[a-zA-Z ]+")){
             throw new InvalidName("El nombre no tiene el formato adecuado.");
         }else {
             this.lastName1 = lastName1;
         }
-        if (!lastName2.matches("[a-zA-Z]+")){
+        if (!lastName2.matches("[a-zA-Z ]+")){
             throw new InvalidName("El nombre no tiene el formato adecuado.");
         }else {
             this.lastName2 = lastName2;
@@ -64,7 +64,7 @@ public class Student {
 
     public void setName(String name) throws InvalidName {
 
-        if (!name.matches("[a-zA-Z]+")){
+        if (!name.matches("[a-zA-Z ]+")){
             throw new InvalidName("El nombre no tiene el formato adecuado.");
         }else {
             this.name = name;
@@ -77,7 +77,7 @@ public class Student {
 
     public void setLastName1(String lastName1) throws InvalidName {
 
-        if (!lastName1.matches("[a-zA-Z]+")){
+        if (!lastName1.matches("[a-zA-Z ]+")){
             throw new InvalidName("El nombre no tiene el formato adecuado.");
         }else {
             this.lastName1 = lastName1;
@@ -90,7 +90,7 @@ public class Student {
 
     public void setLastName2(String lastName2) throws InvalidName {
 
-        if (!lastName2.matches("[a-zA-Z]+")){
+        if (!lastName2.matches("[a-zA-Z ]+")){
             throw new InvalidName("El nombre no tiene el formato adecuado.");
         }else {
             this.lastName2 = lastName2;
