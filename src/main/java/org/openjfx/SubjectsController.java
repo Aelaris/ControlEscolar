@@ -23,10 +23,13 @@ import java.util.Objects;
 public class SubjectsController {
 
     private Subject subject;
+    private final double coordinateX = 838;
+    private final double coordinateY = 300;
+
+    public SubjectsController() {}
 
     @FXML
     public void initialize() {
-
         UpdateTextView();
     }
 
@@ -42,10 +45,8 @@ public class SubjectsController {
 
             DataStore.addSubject(subject);
 
-        }catch (ClaveSubject | SemesterSubject | CreditsSubject e) {
 
-            double coordinateX = 650;
-            double coordinateY = 300;
+        }catch (ClaveSubject | SemesterSubject | CreditsSubject e) {
 
             Stage popupStage = new Stage();
             Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorSubject.fxml")));
@@ -77,6 +78,7 @@ public class SubjectsController {
 
         if (selectedSubject != null) {
             DataStore.removeSubject(selectedSubject);
+
         }
     }
 
@@ -104,9 +106,6 @@ public class SubjectsController {
 
     @FXML
     private void openPopup() throws IOException {
-
-        double coordinateX = 650;
-        double coordinateY = 300;
 
         Stage popupStage = new Stage();
         Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ConfirmacionExit.fxml")));

@@ -155,6 +155,25 @@
                   <TableColumn fx:id="txt_c" prefWidth="302.39996337890625" text="Cursos" />
                </columns>
             </TableView>
+            <Button graphicTextGap="15.0" layoutX="694.0" layoutY="585.0" mnemonicParsing="false" onAction="#deleteSelectedStudentCourse" prefHeight="19.0" prefWidth="150.0" stylesheets="@../../css/botonDelete.css" text="Eliminar">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.5197568535804749" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/home_page_480px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             </children>
         </Pane>
     </children>

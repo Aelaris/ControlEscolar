@@ -20,6 +20,9 @@ import java.util.Objects;
 
 public class CourseController {
 
+    private final double coordinateX = 838;
+    private final double coordinateY = 300;
+
     public CourseController(){}
 
     @FXML
@@ -53,7 +56,8 @@ public class CourseController {
     }
 
     @FXML
-    private void createCourse() {
+    private void createCourse() throws IOException {
+
         Teacher selectedTeacher = txt_viewTeachers.getSelectionModel().getSelectedItem();
         Subject selectedSubject = txt_viewSubjects.getSelectionModel().getSelectedItem();
 
@@ -62,7 +66,16 @@ public class CourseController {
             DataStore.addCourse(course);
 
         } else {
-            System.out.println(" ");
+
+            Stage popupStage = new Stage();
+            Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorCourse.fxml")));
+            popupStage.setScene(new Scene(popupRoot));
+            popupStage.initStyle(StageStyle.UNDECORATED);
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.show();
+            popupStage.centerOnScreen();
+            popupStage.setX(coordinateX);
+            popupStage.setY(coordinateY);
         }
     }
 
@@ -92,9 +105,18 @@ public class CourseController {
     }
 
     @FXML
+    private void btnDeleteCourse() {
+
+        Course selectedCourse = txt_viewCourses.getSelectionModel().getSelectedItem();
+
+        if (selectedCourse != null) {
+            DataStore.removeCourse(selectedCourse);
+        }
+
+    }
+
+    @FXML
     private void openPopup() throws IOException {
-        double coordinateX = 650;
-        double coordinateY = 300;
 
         Stage popupStage = new Stage();
         Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ConfirmacionExit.fxml")));
@@ -107,6 +129,8 @@ public class CourseController {
         popupStage.setY(coordinateY);
 
     }
+
+
 
     @FXML
     private TableView<Teacher> txt_viewTeachers;
@@ -146,6 +170,7 @@ public class CourseController {
 
     @FXML
     private TableView<Course> txt_viewCourses;
+
 
 }
 

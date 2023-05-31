@@ -147,7 +147,7 @@
                   </Label>
                     </children>
                 </Pane>
-            <Button graphicTextGap="15.0" layoutX="504.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnStudents" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Alumnos">
+            <Button graphicTextGap="15.0" layoutX="518.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnStudents" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Alumnos">
                <effect>
                   <DropShadow>
                      <color>
@@ -159,7 +159,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="684.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnTeachers" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Maestros">
+            <Button graphicTextGap="15.0" layoutX="698.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnTeachers" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Maestros">
                <effect>
                   <DropShadow>
                      <color>
@@ -171,7 +171,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="864.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnSubjects" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Materias">
+            <Button graphicTextGap="15.0" layoutX="878.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnSubjects" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Materias">
                <effect>
                   <DropShadow>
                      <color>
@@ -183,7 +183,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="775.0" layoutY="379.0" mnemonicParsing="false" onAction="#btnRegistered" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Registrados">
+            <Button graphicTextGap="15.0" layoutX="789.0" layoutY="379.0" mnemonicParsing="false" onAction="#btnRegistered" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Registrados">
                <effect>
                   <DropShadow>
                      <color>
@@ -195,7 +195,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button graphicTextGap="15.0" layoutX="595.0" layoutY="379.0" mnemonicParsing="false" onAction="#btnCourses" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Curso">
+            <Button graphicTextGap="15.0" layoutX="609.0" layoutY="379.0" mnemonicParsing="false" onAction="#btnCourses" prefHeight="150.0" prefWidth="150.0" stylesheets="@../../css/botonesMain.css" text="Curso">
                <effect>
                   <DropShadow>
                      <color>

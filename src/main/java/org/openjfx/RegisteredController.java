@@ -19,6 +19,11 @@ import java.util.stream.Collectors;
 
 public class RegisteredController {
 
+    private final double coordinateX = 838;
+    private final double coordinateY = 300;
+
+    public RegisteredController() {}
+
     public void initialize() {
         updateTableview();
     }
@@ -28,13 +33,25 @@ public class RegisteredController {
 
         ObservableList<StudentCourses> studentCourses = DataStore.getStudentCourses();
 
-        txt_s.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStudent().getName()));
+        txt_s.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStudent().toString()));
         txt_c.setCellValueFactory(cellData -> new SimpleStringProperty(
                 cellData.getValue().getCourses().stream()
-                        .map(course -> course.getSubject().getName())
-                        .collect(Collectors.joining(", "))
+                        .map(course -> course.getSubject().toString())
+                        .collect(Collectors.joining("\n\n"))
         ));
         txt_viewCoursesStudent.setItems(studentCourses);
+    }
+
+    @FXML
+    private void deleteSelectedStudentCourse() {
+
+        StudentCourses selected = txt_viewCoursesStudent.getSelectionModel().getSelectedItem();
+
+        if (selected != null) {
+
+            DataStore.removeStudentCourse(selected);
+            updateTableview();
+        }
     }
 
     @FXML
@@ -64,8 +81,6 @@ public class RegisteredController {
 
     @FXML
     private void openPopup() throws IOException {
-        double coordinateX = 650;
-        double coordinateY = 300;
 
         Stage popupStage = new Stage();
         Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ConfirmacionExit.fxml")));

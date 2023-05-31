@@ -21,11 +21,6 @@
     <children>
         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" stylesheets="@../../css/botonesMain.css">
             <children>
-            <TextField fx:id="txt_status" focusTraversable="false" layoutX="975.0" layoutY="368.0" prefHeight="25.0" prefWidth="200.0" promptText="Baja" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
                 <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="264.0" spacing="40.0" style="-fx-background-color: f2f2f2;">
                     <children>
                         <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnHome" prefHeight="63.0" prefWidth="207.0" stylesheets="@../../css/boton.css" text="Home" translateY="-5.0">
@@ -176,6 +171,11 @@
                   <Font size="15.0" />
                </font>
             </TextField>
+            <TextField fx:id="txt_controlNumber" layoutX="465.0" layoutY="318.0" prefHeight="25.0" prefWidth="200.0" promptText="Numero de Control" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
             <Label layoutX="318.0" layoutY="221.0" text="Apellido Paterno:" textAlignment="RIGHT" textFill="#8f8f8f">
                <font>
                   <Font size="18.0" />
@@ -211,22 +211,17 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <TextField fx:id="txt_dayStudent" alignment="CENTER" layoutX="975.0" layoutY="268.0" prefHeight="33.0" prefWidth="49.0" promptText="Dia" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
             <TextField fx:id="txt_monthStudent" alignment="CENTER" layoutX="1046.0" layoutY="268.0" prefHeight="33.0" prefWidth="49.0" promptText="Mes" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
             <TextField fx:id="txt_yearStudent" alignment="CENTER" layoutX="1116.0" layoutY="268.0" prefHeight="33.0" prefWidth="59.0" promptText="Año" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txt_dayStudent" alignment="CENTER" layoutX="975.0" layoutY="268.0" prefHeight="33.0" prefWidth="49.0" promptText="Dia" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txt_controlNumber" layoutX="465.0" layoutY="318.0" prefHeight="25.0" prefWidth="200.0" promptText="Numero de Control" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>
@@ -242,6 +237,11 @@
                </font>
             </Label>
             <ComboBox fx:id="cb_gender" layoutX="975.0" layoutY="318.0" prefHeight="33.0" prefWidth="200.0" promptText="Genero" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/comboBox.css" />
+            <TextField fx:id="txt_status" focusTraversable="false" layoutX="975.0" layoutY="368.0" prefHeight="25.0" prefWidth="200.0" promptText="Baja" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
             <TableView fx:id="txt_viewStudents" layoutX="289.0" layoutY="474.0" prefHeight="235.0" prefWidth="745.0" stylesheets="@../../css/Tabla.css">
                <columns>
                   <TableColumn fx:id="txt_nS" prefWidth="88.0" text="Nombre" />

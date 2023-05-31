@@ -22,7 +22,7 @@
          <children>
             <Pane layoutX="164.0" layoutY="2.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" translateX="100.0">
                <children>
-                  <Button graphicTextGap="15.0" layoutX="367.0" layoutY="550.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="40.0" prefWidth="282.0" style="-fx-background-radius: 0 0 30 30;" stylesheets="@../../css/botonLogin.css" text="Login">
+                  <Button graphicTextGap="15.0" layoutX="367.0" layoutY="550.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="40.0" prefWidth="282.0" style="-fx-background-radius: 0 0 30 30;" stylesheets="@../../css/botonLogin.css" text="Entrar">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -39,7 +39,7 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                      <children>
-                        <TextField fx:id="txt_key" layoutX="95.0" layoutY="102.0" prefHeight="35.0" prefWidth="246.0" promptText="CLAVE" style="-fx-background-radius: 0 0 0 0; -fx-background-color: ffffff;" stylesheets="@../../css/txtInput.css" />
+                        <TextField fx:id="txt_key" layoutX="95.0" layoutY="102.0" onKeyPressed="#onEnter" prefHeight="35.0" prefWidth="246.0" promptText="CLAVE" style="-fx-background-radius: 0 0 0 0; -fx-background-color: ffffff;" stylesheets="@../../css/txtInput.css" />
                         <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="60.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../imagenes/icons8-key-90.png" />
@@ -50,7 +50,7 @@
                               <Image url="@../../imagenes/icons8-password-90.png" />
                            </image>
                         </ImageView>
-                        <PasswordField fx:id="txt_password" layoutX="95.0" layoutY="150.0" prefHeight="35.0" prefWidth="246.0" promptText="CONTRASEÑA" style="-fx-background-radius: 0 0 0 0; -fx-background-color: ffffff;" stylesheets="@../../css/txtInput.css" />
+                        <PasswordField fx:id="txt_password" layoutX="95.0" layoutY="150.0" onKeyPressed="#onEnter" prefHeight="35.0" prefWidth="246.0" promptText="CONTRASEÑA" style="-fx-background-radius: 0 0 0 0; -fx-background-color: ffffff;" stylesheets="@../../css/txtInput.css" />
                         <ImageView fitHeight="100.0" fitWidth="95.0" layoutX="153.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
                            <effect>
                               <DropShadow height="10.0" radius="4.5" width="10.0" />
@@ -176,7 +176,7 @@
                   <DropShadow blurType="GAUSSIAN" />
                </effect>
                <children>
-                  <ImageView fitHeight="130.0" fitWidth="150.0" layoutX="71.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="img_tec" fitHeight="130.0" fitWidth="150.0" layoutX="71.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../imagenes/Myproject.png" />
                      </image>
@@ -193,6 +193,18 @@
                   </Label>
                </children>
             </Pane>
+            <Button graphicTextGap="15.0" layoutX="677.0" layoutY="595.0" mnemonicParsing="false" onAction="#btnRegister" prefHeight="26.0" prefWidth="188.0" style="-fx-background-radius: 0 0 30 30;" stylesheets="@../../css/botonLogin.css" text="Registrar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" height="73.11" offsetY="10.0" radius="17.7775" width="0.0">
+                     <color>
+                        <Color opacity="0.16489361226558685" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
          </children>
       </Pane>
     </children>

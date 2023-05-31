@@ -31,14 +31,15 @@ public class Student {
         if (status == null || status.isEmpty()) {
             this.status = "Inscrito";
         } else {
-            if (status.length() != 3 ||
-                    status.charAt(0) != 'B' ||
-                    (status.charAt(1) != 'D' && status.charAt(1) != 'T') ||
-                    !Character.isDigit(status.charAt(2)) ||
-                    status.charAt(2) == '0') {
-                throw new InvalidStatus("Formato de status inválido. Debe seguir el formato: 'BD' o 'BT' seguido de un dígito (1-9).");
-            } else {
+            if (status.equalsIgnoreCase("Inscrito") ||
+                    (status.length() == 3 &&
+                            status.charAt(0) == 'B' &&
+                            (status.charAt(1) == 'D' || status.charAt(1) == 'T') &&
+                            Character.isDigit(status.charAt(2)) &&
+                            status.charAt(2) != '0')) {
                 this.status = status;
+            } else {
+                throw new InvalidStatus("Formato de status inválido. Debe seguir el formato: 'BD' o 'BT' seguido de un dígito (1-9) o ser 'Inscrito'.");
             }
         }
 
@@ -130,14 +131,15 @@ public class Student {
         if (status == null || status.isEmpty()) {
             this.status = "Inscrito";
         } else {
-            if (status.length() != 3 ||
-                    status.charAt(0) != 'B' ||
-                    (status.charAt(1) != 'D' && status.charAt(1) != 'T') ||
-                    !Character.isDigit(status.charAt(2)) ||
-                    status.charAt(2) == '0') {
-                throw new InvalidStatus("Formato de status inválido. Debe seguir el formato: 'BD' o 'BT' seguido de un dígito (1-9).");
-            } else {
+            if (status.equalsIgnoreCase("Inscrito") ||
+                    (status.length() == 3 &&
+                            status.charAt(0) == 'B' &&
+                            (status.charAt(1) == 'D' || status.charAt(1) == 'T') &&
+                            Character.isDigit(status.charAt(2)) &&
+                            status.charAt(2) != '0')) {
                 this.status = status;
+            } else {
+                throw new InvalidStatus("Formato de status inválido. Debe seguir el formato: 'BD' o 'BT' seguido de un dígito (1-9) o ser 'Inscrito'.");
             }
         }
     }
@@ -148,5 +150,10 @@ public class Student {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String toString(){
+
+        return "Nombre: "+name+"\nMatricula: "+numControl+"\nCurp: "+curp;
     }
 }

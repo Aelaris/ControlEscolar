@@ -21,6 +21,11 @@ import java.util.Objects;
 
 public class StudentCourseController {
 
+    private final double coordinateX = 838;
+    private final double coordinateY = 300;
+
+    public StudentCourseController() {}
+
     public void initialize() {
         updateTableview();
     }
@@ -101,8 +106,6 @@ public class StudentCourseController {
 
     @FXML
     private void openPopup() throws IOException {
-        double coordinateX = 650;
-        double coordinateY = 300;
 
         Stage popupStage = new Stage();
         Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ConfirmacionExit.fxml")));

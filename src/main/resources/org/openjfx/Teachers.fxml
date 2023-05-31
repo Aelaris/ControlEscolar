@@ -205,17 +205,17 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <TextField fx:id="txt_dayTeacher" alignment="CENTER" layoutX="975.0" layoutY="268.0" prefHeight="33.0" prefWidth="49.0" promptText="Dia" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
             <TextField fx:id="txt_monthTeacher" alignment="CENTER" layoutX="1046.0" layoutY="268.0" prefHeight="33.0" prefWidth="49.0" promptText="Mes" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
             <TextField fx:id="txt_yearTeacher" alignment="CENTER" layoutX="1116.0" layoutY="268.0" prefHeight="33.0" prefWidth="59.0" promptText="Año" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txt_dayTeacher" alignment="CENTER" layoutX="975.0" layoutY="268.0" prefHeight="33.0" prefWidth="49.0" promptText="Dia" style="-fx-background-color: transparent; -fx-border-color: #45DC9C; -fx-border-width: 0px 0px 2px 0px;" stylesheets="@../../css/txtInput.css">
                <font>
                   <Font size="15.0" />
                </font>

@@ -1,6 +1,5 @@
 package org.openjfx;
 
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,13 +10,17 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.util.Objects;
 
+
 public class HomeController {
+
+    private final double coordinateX = 838;
+    private final double coordinateY = 300;
+
+    public HomeController() {}
+
 
     @FXML
     private void openPopup() throws IOException {
-
-        double coordinateX = 650;
-        double coordinateY = 300;
 
         Stage popupStage = new Stage();
         Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ConfirmacionExit.fxml")));
@@ -25,7 +28,6 @@ public class HomeController {
         popupStage.initStyle(StageStyle.UNDECORATED);
         popupStage.initModality(Modality.APPLICATION_MODAL);
         popupStage.show();
-
         popupStage.centerOnScreen();
         popupStage.setX(coordinateX);
         popupStage.setY(coordinateY);
@@ -56,5 +58,4 @@ public class HomeController {
     private void btnRegistered() throws IOException {
         App.setRoot("Registered");
     }
-
 }

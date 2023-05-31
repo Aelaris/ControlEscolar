@@ -23,6 +23,8 @@ public class TeacherController {
 
     private Teacher teacher;
     private Date date;
+    private final double coordinateX = 838;
+    private final double coordinateY = 300;
 
 
     public TeacherController(){}
@@ -85,9 +87,6 @@ public class TeacherController {
 
         }catch (InvalidDay | InvalidMonth | InvalidYear e) {
 
-            double coordinateX = 650;
-            double coordinateY = 300;
-
             Stage popupStage = new Stage();
             Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorDate.fxml")));
             popupStage.setScene(new Scene(popupRoot));
@@ -100,9 +99,6 @@ public class TeacherController {
 
 
         }catch (InvalidName e) {
-
-            double coordinateX = 650;
-            double coordinateY = 300;
 
             Stage popupStage = new Stage();
             Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorName.fxml")));
@@ -139,7 +135,7 @@ public class TeacherController {
     }
 
     @FXML
-    private void btnUpdateTeacher() throws InvalidName, IOException {
+    private void btnUpdateTeacher() throws IOException {
 
         Teacher selectedTeacher = txt_viewTeachers.getSelectionModel().getSelectedItem();
 
@@ -152,10 +148,7 @@ public class TeacherController {
 
             newDate = new Date(day, month, year);
 
-        } catch (InvalidDay | InvalidMonth | InvalidYear ex) {
-
-            double coordinateX = 650;
-            double coordinateY = 300;
+        } catch (InvalidDay | InvalidMonth | InvalidYear e) {
 
             Stage popupStage = new Stage();
             Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorDate.fxml")));
@@ -163,7 +156,6 @@ public class TeacherController {
             popupStage.initStyle(StageStyle.UNDECORATED);
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.show();
-
             popupStage.centerOnScreen();
             popupStage.setX(coordinateX);
             popupStage.setY(coordinateY);
@@ -171,19 +163,33 @@ public class TeacherController {
 
         if (selectedTeacher != null) {
 
-            Teacher updatedTeacher = new Teacher(
+            try {
+                Teacher updatedTeacher = new Teacher(
 
-                    txt_nameTeacher.getText(),
-                    txt_lastName1Teacher.getText(),
-                    txt_lastName2Teacher.getText(),
-                    txt_curpTeacher.getText(),
-                    txt_cel.getText(),
-                    newDate
-            );
+                        txt_nameTeacher.getText(),
+                        txt_lastName1Teacher.getText(),
+                        txt_lastName2Teacher.getText(),
+                        txt_curpTeacher.getText(),
+                        txt_cel.getText(),
+                        newDate
+                );
 
-            DataStore.updateTeacher(selectedTeacher, updatedTeacher);
+                DataStore.updateTeacher(selectedTeacher, updatedTeacher);
+                txt_viewTeachers.refresh();
 
-            txt_viewTeachers.refresh();
+            } catch(InvalidName e) {
+
+                Stage popupStage = new Stage();
+                Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ErrorName.fxml")));
+                popupStage.setScene(new Scene(popupRoot));
+                popupStage.initStyle(StageStyle.UNDECORATED);
+                popupStage.initModality(Modality.APPLICATION_MODAL);
+                popupStage.show();
+                popupStage.centerOnScreen();
+                popupStage.setX(coordinateX);
+                popupStage.setY(coordinateY);
+            }
+
         }
     }
 
@@ -217,6 +223,21 @@ public class TeacherController {
     }
 
     @FXML
+    private void openPopup() throws IOException {
+
+        Stage popupStage = new Stage();
+        Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ConfirmacionExit.fxml")));
+        popupStage.setScene(new Scene(popupRoot));
+        popupStage.initStyle(StageStyle.UNDECORATED);
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.show();
+        popupStage.centerOnScreen();
+        popupStage.setX(coordinateX);
+        popupStage.setY(coordinateY);
+
+    }
+
+    @FXML
     private void btnSubjects() throws IOException {
         App.setRoot("Subjects");
     }
@@ -239,27 +260,6 @@ public class TeacherController {
     @FXML
     private void btnRegistered() throws IOException {
         App.setRoot("Registered");
-    }
-
-
-
-    @FXML
-    private void openPopup() throws IOException {
-
-        double coordinateX = 650;
-        double coordinateY = 300;
-
-        Stage popupStage = new Stage();
-        Parent popupRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ConfirmacionExit.fxml")));
-        popupStage.setScene(new Scene(popupRoot));
-        popupStage.initStyle(StageStyle.UNDECORATED);
-        popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.show();
-
-        popupStage.centerOnScreen();
-        popupStage.setX(coordinateX);
-        popupStage.setY(coordinateY);
-
     }
 
     @FXML

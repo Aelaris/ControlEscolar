@@ -71,6 +71,11 @@ public class DataStore {
         students.remove(student);
     }
 
+    public static void removeStudentCourse(StudentCourses studentCourse) {
+        studentCourses.remove(studentCourse);
+    }
+
+
     public static void updateTeacher(Teacher oldTeacher, Teacher newTeacher) throws InvalidName {
 
         oldTeacher.setName(newTeacher.getName());
@@ -93,10 +98,6 @@ public class DataStore {
         oldStudent.setDate(newStudent.getDate());
         oldStudent.setGender(newStudent.getGender());
         oldStudent.setStatus(newStudent.getStatus());
-
-    }
-
-    public static void updateSubject(Subject oldSubject, Subject newSubject) {
 
     }
 }
